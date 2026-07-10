@@ -324,6 +324,7 @@ const hot100Problems = (window.hot100Problems || []).map((problem) => {
   return {
     ...problem,
     ...content,
+    template: window.hot100Starters?.[String(problem.number)] || content.template || problem.template,
     interviewNotes: [...(content.interviewNotes || []), ...(problem.interviewNotes || [])],
     methods: problem.methods?.length
       ? problem.methods
@@ -349,6 +350,11 @@ const themeKey = "theme";
 const gateKey = "xixi-practice-access";
 const gatePassword = "111";
 let researchByNumber = {};
+const legacyBlankTemplate = `// 先在这里写自己的 C++ 解法，再展开下方参考答案。
+class Solution {
+public:
+    // TODO
+};`;
 
 const $ = (selector) => document.querySelector(selector);
 
@@ -744,10 +750,11 @@ const renderDetail = () => {
   $("#sampleInput").textContent = problem.input || "见题面";
   $("#sampleOutput").textContent = problem.output || "见题面";
   $("#problemHint").textContent = problem.hint || "先写出自己的暴力思路，再尝试优化复杂度。";
-  $("#codeEditor").value = saved.code || problem.template || "";
+  const savedCode = saved.code?.trim() === legacyBlankTemplate.trim() ? "" : saved.code;
+  $("#codeEditor").value = savedCode || problem.template || "";
   $("#summaryEditor").value = saved.summary || "";
-  $("#saveState").textContent = saved.code ? "已保存草稿" : "自动保存到本机";
-  $("#summaryState").textContent = saved.summary ? "已保存摘要" : "自动保存到本机";
+  $("#saveState").textContent = savedCode ? "已保存到当前浏览器" : "保存在当前浏览器";
+  $("#summaryState").textContent = saved.summary ? "已保存到当前浏览器" : "保存在当前浏览器";
   $("#doneButton").textContent = saved.done ? "已完成" : "标记完成";
   $("#doneButton").classList.toggle("is-done", saved.done === true);
   const official = $("#officialLink");
@@ -822,11 +829,11 @@ const setupEvents = () => {
   });
   $("#codeEditor").addEventListener("input", (event) => {
     updateSelectedProblem({ code: event.target.value });
-    $("#saveState").textContent = "已保存草稿";
+    $("#saveState").textContent = "已保存到当前浏览器";
   });
   $("#summaryEditor").addEventListener("input", (event) => {
     updateSelectedProblem({ summary: event.target.value });
-    $("#summaryState").textContent = "已保存摘要";
+    $("#summaryState").textContent = "已保存到当前浏览器";
   });
   $("#methodSelect").addEventListener("change", (event) => {
     state.methodIndex = Number(event.target.value);
