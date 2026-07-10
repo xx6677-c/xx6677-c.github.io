@@ -1,13 +1,15 @@
-const problems = [
+const baseProblems = [
   {
     id: "sum-a-b",
+    collection: "????",
     title: "A + B Problem",
-    difficulty: "入门",
-    tags: ["输入输出", "基础"],
-    description: "读入两个整数 a 和 b，输出它们的和。适合检查 C++ 输入输出模板是否顺手。",
+    difficulty: "??",
+    tags: ["????", "??"],
+    officialUrl: "",
+    description: "?????? a ? b???????????? C++ ???????????",
     input: "3 5",
     output: "8",
-    hint: "使用 cin 读取两个 int 或 long long，再输出 a + b。注意最后可以换行。",
+    hint: "?? cin ???? long long???? a + b????????",
     template: `#include <bits/stdc++.h>
 using namespace std;
 
@@ -17,30 +19,38 @@ int main() {
 
     long long a, b;
     cin >> a >> b;
-    cout << a + b << '\\n';
+    cout << a + b << '\n';
     return 0;
 }
 `,
-    solution: `#include <bits/stdc++.h>
+    methods: [
+      {
+        name: "????",
+        idea: "???????????????? O(1)?",
+        code: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
     long long a, b;
     cin >> a >> b;
-    cout << a + b << '\\n';
+    cout << a + b << '\n';
     return 0;
 }
 `,
+      },
+    ],
   },
   {
     id: "max-of-three",
-    title: "三个数中的最大值",
-    difficulty: "入门",
-    tags: ["分支", "基础"],
-    description: "读入三个整数，输出其中最大的一个。",
+    collection: "????",
+    title: "????????",
+    difficulty: "??",
+    tags: ["??", "??"],
+    officialUrl: "",
+    description: "?????????????????",
     input: "7 13 9",
     output: "13",
-    hint: "可以用 max({a, b, c})，也可以用 if 逐个比较。",
+    hint: "??? max({a, b, c})????? if ?????",
     template: `#include <bits/stdc++.h>
 using namespace std;
 
@@ -54,26 +64,35 @@ int main() {
     return 0;
 }
 `,
-    solution: `#include <bits/stdc++.h>
+    methods: [
+      {
+        name: "??? max",
+        idea: "? initializer_list ??? max ???????????",
+        code: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
     int a, b, c;
     cin >> a >> b >> c;
-    cout << max({a, b, c}) << '\\n';
+    cout << max({a, b, c}) << '\n';
     return 0;
 }
 `,
+      },
+      { name: "if ??", idea: "?? ans???? b?c ?????", code: "// TODO: ? if ????" },
+    ],
   },
   {
     id: "prefix-sum-range",
-    title: "区间和查询",
-    difficulty: "简单",
-    tags: ["前缀和", "数组"],
-    description: "给定 n 个数和 q 次询问，每次询问 [l, r] 的区间和。下标从 1 开始。",
+    collection: "????",
+    title: "?????",
+    difficulty: "??",
+    tags: ["???", "??"],
+    officialUrl: "",
+    description: "?? n ??? q ???????? [l, r] ???????? 1 ???",
     input: "5 3\n1 2 3 4 5\n1 3\n2 5\n4 4",
     output: "6\n14\n4",
-    hint: "预处理 prefix[i] = a[1] + ... + a[i]，区间和为 prefix[r] - prefix[l - 1]。",
+    hint: "??? prefix[i] = a[1] + ... + a[i]????? prefix[r] - prefix[l - 1]?",
     template: `#include <bits/stdc++.h>
 using namespace std;
 
@@ -88,7 +107,11 @@ int main() {
     return 0;
 }
 `,
-    solution: `#include <bits/stdc++.h>
+    methods: [
+      {
+        name: "?????",
+        idea: "? O(n) ??????????? O(1) ???",
+        code: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -106,21 +129,25 @@ int main() {
     while (q--) {
         int l, r;
         cin >> l >> r;
-        cout << prefix[r] - prefix[l - 1] << '\\n';
+        cout << prefix[r] - prefix[l - 1] << '\n';
     }
     return 0;
 }
 `,
+      },
+    ],
   },
   {
     id: "two-sum-sorted",
-    title: "有序数组两数和",
-    difficulty: "简单",
-    tags: ["双指针", "数组"],
-    description: "给定一个递增数组和目标值 target，判断是否存在两个不同位置的数之和等于 target。",
+    collection: "????",
+    title: "???????",
+    difficulty: "??",
+    tags: ["???", "??"],
+    officialUrl: "",
+    description: "???????????? target??????????????????? target?",
     input: "6 10\n1 2 4 6 8 11",
     output: "YES",
-    hint: "左指针从开头，右指针从末尾。和太小左指针右移，和太大右指针左移。",
+    hint: "????????????????????????????????",
     template: `#include <bits/stdc++.h>
 using namespace std;
 
@@ -137,7 +164,11 @@ int main() {
     return 0;
 }
 `,
-    solution: `#include <bits/stdc++.h>
+    methods: [
+      {
+        name: "???",
+        idea: "????????????????????? O(n)?",
+        code: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -150,26 +181,30 @@ int main() {
     while (l < r) {
         long long sum = a[l] + a[r];
         if (sum == target) {
-            cout << "YES\\n";
+            cout << "YES\n";
             return 0;
         }
         if (sum < target) ++l;
         else --r;
     }
-    cout << "NO\\n";
+    cout << "NO\n";
     return 0;
 }
 `,
+      },
+    ],
   },
   {
     id: "gcd-lcm",
-    title: "最大公约数与最小公倍数",
-    difficulty: "简单",
-    tags: ["数学", "函数"],
-    description: "读入两个正整数 a 和 b，输出 gcd(a, b) 和 lcm(a, b)。",
+    collection: "????",
+    title: "???????????",
+    difficulty: "??",
+    tags: ["??", "??"],
+    officialUrl: "",
+    description: "??????? a ? b??? gcd(a, b) ? lcm(a, b)?",
     input: "12 18",
     output: "6 36",
-    hint: "C++17 可以使用 std::gcd。lcm = a / gcd(a, b) * b 可以减少溢出风险。",
+    hint: "C++17 ???? std::gcd?lcm = a / gcd(a, b) * b ?????????",
     template: `#include <bits/stdc++.h>
 using namespace std;
 
@@ -183,27 +218,35 @@ int main() {
     return 0;
 }
 `,
-    solution: `#include <bits/stdc++.h>
+    methods: [
+      {
+        name: "gcd ? lcm",
+        idea: "?????????? a / gcd * b ???????",
+        code: `#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
     long long a, b;
     cin >> a >> b;
     long long g = gcd(a, b);
-    cout << g << ' ' << a / g * b << '\\n';
+    cout << g << ' ' << a / g * b << '\n';
     return 0;
 }
 `,
+      },
+    ],
   },
   {
     id: "binary-search-first",
-    title: "二分查找第一个不小于 x",
-    difficulty: "中等",
-    tags: ["二分", "数组"],
-    description: "给定递增数组和 x，输出第一个大于等于 x 的位置。如果不存在，输出 -1。位置从 1 开始。",
+    collection: "????",
+    title: "?????????? x",
+    difficulty: "??",
+    tags: ["??", "??"],
+    officialUrl: "",
+    description: "??????? x?????????? x ???????????? -1???? 1 ???",
     input: "6 5\n1 3 5 5 7 9",
     output: "3",
-    hint: "维护答案 ans。若 a[mid] >= x，记录 mid 并继续向左找。",
+    hint: "???? ans?? a[mid] >= x??? mid ???????",
     template: `#include <bits/stdc++.h>
 using namespace std;
 
@@ -220,39 +263,22 @@ int main() {
     return 0;
 }
 `,
-    solution: `#include <bits/stdc++.h>
-using namespace std;
-
-int main() {
-    int n;
-    long long x;
-    cin >> n >> x;
-    vector<long long> a(n);
-    for (auto &v : a) cin >> v;
-    int l = 0, r = n - 1, ans = -1;
-    while (l <= r) {
-        int mid = l + (r - l) / 2;
-        if (a[mid] >= x) {
-            ans = mid + 1;
-            r = mid - 1;
-        } else {
-            l = mid + 1;
-        }
-    }
-    cout << ans << '\\n';
-    return 0;
-}
-`,
+    methods: [
+      { name: "????", idea: "???????????????", code: "// TODO: ??????" },
+      { name: "lower_bound", idea: "?? STL lower_bound ???????? x ????", code: "// TODO: lower_bound ??" },
+    ],
   },
   {
     id: "bfs-grid",
-    title: "网格最短路",
-    difficulty: "中等",
-    tags: ["BFS", "队列", "图论"],
-    description: "给定 n*m 网格，'.' 可走，'#' 障碍。从 S 到 T，输出最短步数，不可达输出 -1。",
+    collection: "????",
+    title: "?????",
+    difficulty: "??",
+    tags: ["BFS", "??", "??"],
+    officialUrl: "",
+    description: "?? n*m ???'.' ???'#' ???? S ? T????????????? -1?",
     input: "3 4\nS..#\n.#..\n...T",
     output: "5",
-    hint: "使用队列 BFS，记录 dist。四个方向扩展，第一次到达 T 的距离就是最短路。",
+    hint: "???? BFS??? dist????????????? T ?????????",
     template: `#include <bits/stdc++.h>
 using namespace std;
 
@@ -268,53 +294,19 @@ int main() {
     return 0;
 }
 `,
-    solution: `#include <bits/stdc++.h>
-using namespace std;
-
-int main() {
-    int n, m;
-    cin >> n >> m;
-    vector<string> g(n);
-    for (auto &row : g) cin >> row;
-    queue<pair<int, int>> q;
-    vector dist(n, vector<int>(m, -1));
-    pair<int, int> target{-1, -1};
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < m; ++j) {
-            if (g[i][j] == 'S') {
-                q.push({i, j});
-                dist[i][j] = 0;
-            }
-            if (g[i][j] == 'T') target = {i, j};
-        }
-    }
-    int dx[4] = {1, -1, 0, 0};
-    int dy[4] = {0, 0, 1, -1};
-    while (!q.empty()) {
-        auto [x, y] = q.front();
-        q.pop();
-        for (int k = 0; k < 4; ++k) {
-            int nx = x + dx[k], ny = y + dy[k];
-            if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
-            if (g[nx][ny] == '#' || dist[nx][ny] != -1) continue;
-            dist[nx][ny] = dist[x][y] + 1;
-            q.push({nx, ny});
-        }
-    }
-    cout << dist[target.first][target.second] << '\\n';
-    return 0;
-}
-`,
+    methods: [{ name: "BFS", idea: "? S ????????????dist ?????????", code: "// TODO: BFS ????" }],
   },
   {
     id: "knapsack-01",
-    title: "01 背包",
-    difficulty: "提高",
-    tags: ["动态规划", "背包"],
-    description: "有 n 件物品，每件有体积 w 和价值 v，背包容量为 W。每件最多选一次，求最大价值。",
+    collection: "????",
+    title: "01 ??",
+    difficulty: "??",
+    tags: ["????", "??"],
+    officialUrl: "",
+    description: "? n ????????? w ??? v?????? W???????????????",
     input: "4 7\n3 4\n4 5\n2 3\n5 7",
     output: "9",
-    hint: "一维 dp。枚举物品后，容量要从 W 倒序到 w，避免同一件物品被重复选。",
+    hint: "?? dp??????????? W ??? w?????????????",
     template: `#include <bits/stdc++.h>
 using namespace std;
 
@@ -329,44 +321,40 @@ int main() {
     return 0;
 }
 `,
-    solution: `#include <bits/stdc++.h>
-using namespace std;
-
-int main() {
-    int n, W;
-    cin >> n >> W;
-    vector<int> dp(W + 1);
-    for (int i = 0; i < n; ++i) {
-        int w, v;
-        cin >> w >> v;
-        for (int cap = W; cap >= w; --cap) {
-            dp[cap] = max(dp[cap], dp[cap - w] + v);
-        }
-    }
-    cout << dp[W] << '\\n';
-    return 0;
-}
-`,
+    methods: [{ name: "?? DP", idea: "???????????????????", code: "// TODO: 01 ??????" }],
   },
 ];
 
+const hot100Problems = (window.hot100Problems || []).map((problem) => ({
+  ...problem,
+  methods: problem.methods || [
+    { name: "???????", idea: "????????????????", code: "// TODO" },
+  ],
+}));
+
+const problems = [...baseProblems, ...hot100Problems];
 const root = document.documentElement;
 const state = {
   selectedId: problems[0].id,
+  collection: "all",
   search: "",
   difficulty: "all",
   tag: "all",
   status: "all",
+  methodIndex: 0,
 };
 
-const storageKey = "xixi-cpp-practice-v1";
+const storageKey = "xixi-cpp-practice-v2";
+const legacyStorageKey = "xixi-cpp-practice-v1";
 const themeKey = "theme";
+const gateKey = "xixi-practice-access";
+const gatePassword = "111111";
 
 const $ = (selector) => document.querySelector(selector);
 
 const getPracticeData = () => {
   try {
-    return JSON.parse(localStorage.getItem(storageKey) || "{}");
+    return JSON.parse(localStorage.getItem(storageKey) || localStorage.getItem(legacyStorageKey) || "{}");
   } catch {
     return {};
   }
@@ -386,10 +374,7 @@ const getTheme = () => {
 };
 
 const saveTheme = (value) => {
-  localStorage.setItem(
-    themeKey,
-    JSON.stringify({ value, expiry: Date.now() + 365 * 86400000 }),
-  );
+  localStorage.setItem(themeKey, JSON.stringify({ value, expiry: Date.now() + 365 * 86400000 }));
 };
 
 const applyTheme = (value) => {
@@ -398,25 +383,41 @@ const applyTheme = (value) => {
   if (meta) meta.setAttribute("content", value === "dark" ? "#17120f" : "#f4dfbf");
 };
 
-const currentProblem = () => problems.find((problem) => problem.id === state.selectedId);
+const currentProblem = () => problems.find((problem) => problem.id === state.selectedId) || problems[0];
+const allTags = () => [...new Set(problems.flatMap((problem) => problem.tags))].sort((a, b) => a.localeCompare(b, "zh-CN"));
+const allCollections = () => [...new Set(problems.map((problem) => problem.collection || "????"))];
 
-const allTags = () => [...new Set(problems.flatMap((problem) => problem.tags))].sort();
+const isUnlocked = () => localStorage.getItem(gateKey) === gatePassword;
+
+const updateGate = () => {
+  const gate = $("#passwordGate");
+  if (gate) gate.classList.toggle("is-unlocked", isUnlocked());
+};
 
 const matchesFilters = (problem, data) => {
-  const haystack = [problem.title, problem.difficulty, ...problem.tags, problem.description]
+  const haystack = [problem.title, problem.englishTitle, problem.number, problem.difficulty, ...(problem.tags || []), problem.description]
+    .filter(Boolean)
     .join(" ")
     .toLowerCase();
   const done = data[problem.id]?.done === true;
-  const statusOk =
-    state.status === "all" ||
-    (state.status === "done" && done) ||
-    (state.status === "todo" && !done);
+  const statusOk = state.status === "all" || (state.status === "done" && done) || (state.status === "todo" && !done);
   return (
+    (state.collection === "all" || problem.collection === state.collection) &&
     (!state.search || haystack.includes(state.search.toLowerCase())) &&
     (state.difficulty === "all" || problem.difficulty === state.difficulty) &&
-    (state.tag === "all" || problem.tags.includes(state.tag)) &&
+    (state.tag === "all" || (problem.tags || []).includes(state.tag)) &&
     statusOk
   );
+};
+
+const renderCollectionOptions = () => {
+  const select = $("#collectionFilter");
+  for (const collection of allCollections()) {
+    const option = document.createElement("option");
+    option.value = collection;
+    option.textContent = collection;
+    select.appendChild(option);
+  }
 };
 
 const renderTagOptions = () => {
@@ -429,10 +430,13 @@ const renderTagOptions = () => {
   }
 };
 
+const filteredProblems = (data) => problems.filter((problem) => matchesFilters(problem, data));
+
 const renderProgress = (data) => {
-  const doneCount = problems.filter((problem) => data[problem.id]?.done).length;
-  const percent = problems.length ? Math.round((doneCount / problems.length) * 100) : 0;
-  $("#progressText").textContent = `${doneCount} / ${problems.length}`;
+  const scoped = state.collection === "all" ? problems : problems.filter((problem) => problem.collection === state.collection);
+  const doneCount = scoped.filter((problem) => data[problem.id]?.done).length;
+  const percent = scoped.length ? Math.round((doneCount / scoped.length) * 100) : 0;
+  $("#progressText").textContent = `${doneCount} / ${scoped.length}`;
   $("#progressBar").style.width = `${percent}%`;
 };
 
@@ -440,12 +444,16 @@ const renderProblemList = () => {
   const data = getPracticeData();
   const list = $("#problemList");
   list.innerHTML = "";
-  const filtered = problems.filter((problem) => matchesFilters(problem, data));
+  const filtered = filteredProblems(data);
+  if (!filtered.some((problem) => problem.id === state.selectedId) && filtered[0]) {
+    state.selectedId = filtered[0].id;
+    state.methodIndex = 0;
+  }
 
   if (!filtered.length) {
     const empty = document.createElement("div");
     empty.className = "empty-state";
-    empty.textContent = "没有匹配的题目。";
+    empty.textContent = "????????";
     list.appendChild(empty);
     return;
   }
@@ -453,43 +461,64 @@ const renderProblemList = () => {
   for (const problem of filtered) {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = [
-      "problem-item",
-      problem.id === state.selectedId ? "active" : "",
-      data[problem.id]?.done ? "done" : "",
-    ]
+    button.className = ["problem-item", problem.id === state.selectedId ? "active" : "", data[problem.id]?.done ? "done" : ""]
       .filter(Boolean)
       .join(" ");
     button.innerHTML = `
       <strong class="problem-name">${problem.title}</strong>
       <span class="problem-tags">
+        <span class="chip">${problem.collection || "????"}</span>
         <span class="chip">${problem.difficulty}</span>
-        ${problem.tags.map((tag) => `<span class="chip">${tag}</span>`).join("")}
+        ${(problem.tags || []).slice(0, 4).map((tag) => `<span class="chip">${tag}</span>`).join("")}
       </span>
     `;
     button.addEventListener("click", () => {
       state.selectedId = problem.id;
+      state.methodIndex = 0;
       render();
     });
     list.appendChild(button);
   }
 };
 
+const renderMethods = (problem) => {
+  const methods = problem.methods || [];
+  const select = $("#methodSelect");
+  select.innerHTML = "";
+  methods.forEach((method, index) => {
+    const option = document.createElement("option");
+    option.value = String(index);
+    option.textContent = method.name || `?? ${index + 1}`;
+    select.appendChild(option);
+  });
+  const safeIndex = Math.min(state.methodIndex, Math.max(methods.length - 1, 0));
+  state.methodIndex = safeIndex;
+  select.value = String(safeIndex);
+  const method = methods[safeIndex] || { idea: "???", code: "// TODO" };
+  $("#methodIdea").textContent = method.idea || "????";
+  $("#solutionCode").textContent = method.code || "// TODO";
+};
+
 const renderDetail = () => {
   const data = getPracticeData();
   const problem = currentProblem();
   const saved = data[problem.id] || {};
-  $("#problemMeta").textContent = `${problem.difficulty} · ${problem.tags.join(" / ")}`;
+  $("#problemMeta").textContent = `${problem.collection || "????"} ? ${problem.difficulty} ? ${(problem.tags || []).join(" / ")}`;
   $("#problemTitle").textContent = problem.title;
   $("#problemDescription").textContent = problem.description;
-  $("#sampleInput").textContent = problem.input;
-  $("#sampleOutput").textContent = problem.output;
-  $("#problemHint").textContent = problem.hint;
-  $("#solutionCode").textContent = problem.solution;
-  $("#codeEditor").value = saved.code || problem.template;
-  $("#saveState").textContent = saved.code ? "已加载本机草稿" : "自动保存到本机";
-  $("#doneButton").textContent = saved.done ? "已完成" : "标记完成";
+  $("#sampleInput").textContent = problem.input || "???";
+  $("#sampleOutput").textContent = problem.output || "???";
+  $("#problemHint").textContent = problem.hint || "??????????????";
+  $("#codeEditor").value = saved.code || problem.template || "";
+  $("#summaryEditor").value = saved.summary || "";
+  $("#saveState").textContent = saved.code ? "???????" : "???????";
+  $("#summaryState").textContent = saved.summary ? "???????" : "???????";
+  $("#doneButton").textContent = saved.done ? "???" : "????";
   $("#doneButton").classList.toggle("is-done", saved.done === true);
+  const official = $("#officialLink");
+  official.href = problem.officialUrl || "#";
+  official.style.display = problem.officialUrl ? "inline-flex" : "none";
+  renderMethods(problem);
 };
 
 const render = () => {
@@ -509,36 +538,61 @@ const updateSelectedProblem = (patch) => {
 };
 
 const setupEvents = () => {
+  $("#passwordForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    if ($("#passwordInput").value === gatePassword) {
+      localStorage.setItem(gateKey, gatePassword);
+      updateGate();
+      $("#passwordMessage").textContent = "";
+    } else {
+      $("#passwordMessage").textContent = "??????????";
+    }
+  });
+  $("#collectionFilter").addEventListener("change", (event) => {
+    state.collection = event.target.value;
+    render();
+  });
   $("#searchInput").addEventListener("input", (event) => {
     state.search = event.target.value.trim();
     renderProblemList();
+    renderDetail();
   });
   $("#difficultyFilter").addEventListener("change", (event) => {
     state.difficulty = event.target.value;
-    renderProblemList();
+    render();
   });
   $("#tagFilter").addEventListener("change", (event) => {
     state.tag = event.target.value;
-    renderProblemList();
+    render();
   });
   $("#statusFilter").addEventListener("change", (event) => {
     state.status = event.target.value;
-    renderProblemList();
+    render();
   });
   $("#clearFilters").addEventListener("click", () => {
+    state.collection = "all";
     state.search = "";
     state.difficulty = "all";
     state.tag = "all";
     state.status = "all";
+    $("#collectionFilter").value = "all";
     $("#searchInput").value = "";
     $("#difficultyFilter").value = "all";
     $("#tagFilter").value = "all";
     $("#statusFilter").value = "all";
-    renderProblemList();
+    render();
   });
   $("#codeEditor").addEventListener("input", (event) => {
     updateSelectedProblem({ code: event.target.value });
-    $("#saveState").textContent = "已自动保存";
+    $("#saveState").textContent = "?????";
+  });
+  $("#summaryEditor").addEventListener("input", (event) => {
+    updateSelectedProblem({ summary: event.target.value });
+    $("#summaryState").textContent = "?????";
+  });
+  $("#methodSelect").addEventListener("change", (event) => {
+    state.methodIndex = Number(event.target.value);
+    renderMethods(currentProblem());
   });
   $("#doneButton").addEventListener("click", () => {
     const data = getPracticeData();
@@ -548,13 +602,13 @@ const setupEvents = () => {
   });
   $("#resetButton").addEventListener("click", () => {
     const problem = currentProblem();
-    $("#codeEditor").value = problem.template;
-    updateSelectedProblem({ code: problem.template });
-    $("#saveState").textContent = "已恢复模板";
+    $("#codeEditor").value = problem.template || "";
+    updateSelectedProblem({ code: problem.template || "" });
+    $("#saveState").textContent = "?????";
   });
   $("#copyButton").addEventListener("click", async () => {
     await navigator.clipboard.writeText($("#codeEditor").value);
-    $("#saveState").textContent = "代码已复制";
+    $("#saveState").textContent = "?????";
   });
   $(".theme-toggle").addEventListener("click", () => {
     const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
@@ -564,6 +618,8 @@ const setupEvents = () => {
 };
 
 applyTheme(getTheme());
+renderCollectionOptions();
 renderTagOptions();
 setupEvents();
+updateGate();
 render();

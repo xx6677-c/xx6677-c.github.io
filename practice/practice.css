@@ -69,6 +69,74 @@ textarea {
   font: inherit;
 }
 
+.password-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background:
+    linear-gradient(120deg, rgba(255, 250, 241, 0.9), rgba(185, 215, 223, 0.22), rgba(170, 196, 167, 0.18)),
+    url("/assets/cream-living-room.jpg") center / cover;
+}
+
+[data-theme="dark"] .password-gate {
+  background:
+    linear-gradient(120deg, rgba(19, 13, 10, 0.92), rgba(142, 180, 189, 0.14), rgba(147, 170, 143, 0.12)),
+    url("/assets/cream-living-room.jpg") center / cover;
+}
+
+.password-gate.is-unlocked {
+  display: none;
+}
+
+.gate-card {
+  width: min(100%, 480px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: clamp(24px, 5vw, 42px);
+  background:
+    linear-gradient(135deg, var(--paper), rgba(255, 250, 241, 0.7)),
+    url("/assets/cream-living-room.jpg") center / cover;
+  box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .gate-card {
+  background:
+    linear-gradient(135deg, rgba(42, 32, 25, 0.92), rgba(31, 23, 18, 0.78)),
+    url("/assets/cream-living-room.jpg") center / cover;
+}
+
+.gate-card h1 {
+  margin-bottom: 12px;
+  font-size: clamp(2.4rem, 8vw, 4.8rem);
+}
+
+.gate-card p {
+  color: var(--muted);
+}
+
+.gate-card form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.gate-card button {
+  min-height: 44px;
+  padding: 0 14px;
+}
+
+#passwordMessage {
+  display: block;
+  min-height: 20px;
+  margin-top: 10px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
 .practice-header {
   position: sticky;
   top: 0;
@@ -265,7 +333,7 @@ h1 {
 
 .toolbar {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) repeat(3, minmax(150px, 0.25fr));
+  grid-template-columns: minmax(150px, 0.45fr) minmax(220px, 1fr) repeat(3, minmax(140px, 0.25fr));
   gap: 12px;
   margin-bottom: 22px;
   padding: 16px;
@@ -332,6 +400,34 @@ textarea:focus {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.official-link {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 14px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 241, 0.9), rgba(185, 215, 223, 0.22)),
+    url("/assets/lakeside-greenery.jpg") center / cover;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+[data-theme="dark"] .official-link {
+  background:
+    linear-gradient(135deg, rgba(42, 32, 25, 0.88), rgba(142, 180, 189, 0.14)),
+    url("/assets/lakeside-greenery.jpg") center / cover;
 }
 
 .list-heading {
@@ -458,7 +554,8 @@ button:hover {
 
 .io-grid section,
 .hint-box,
-.solution-box {
+.solution-box,
+.methods-box {
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
@@ -468,7 +565,8 @@ button:hover {
 
 [data-theme="dark"] .io-grid section,
 [data-theme="dark"] .hint-box,
-[data-theme="dark"] .solution-box {
+[data-theme="dark"] .solution-box,
+[data-theme="dark"] .methods-box {
   background:
     linear-gradient(135deg, rgba(19, 13, 10, 0.68), rgba(42, 32, 25, 0.72)),
     url("/assets/cream-living-room.jpg") center / cover;
@@ -492,9 +590,42 @@ pre {
 }
 
 .hint-box,
-.solution-box {
+.solution-box,
+.methods-box {
   margin-top: 14px;
   padding: 14px;
+}
+
+.methods-box {
+  background:
+    linear-gradient(135deg, rgba(255, 250, 241, 0.84), rgba(170, 196, 167, 0.16)),
+    url("/assets/plant-workspace.jpg") center / cover;
+}
+
+[data-theme="dark"] .methods-box {
+  background:
+    linear-gradient(135deg, rgba(42, 32, 25, 0.9), rgba(147, 170, 143, 0.12)),
+    url("/assets/plant-workspace.jpg") center / cover;
+}
+
+.methods-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.methods-heading h3 {
+  margin: 0;
+}
+
+.methods-heading select {
+  max-width: 260px;
+}
+
+#methodIdea {
+  color: var(--muted);
 }
 
 summary {
@@ -524,6 +655,10 @@ textarea {
   font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
   font-size: 0.92rem;
   line-height: 1.55;
+}
+
+.summary-editor {
+  min-height: 120px;
 }
 
 .editor-actions {
@@ -567,13 +702,18 @@ textarea {
 
 @media (max-width: 540px) {
   .detail-top,
-  .editor-actions {
+  .editor-actions,
+  .gate-card form,
+  .methods-heading {
     align-items: stretch;
     flex-direction: column;
   }
 
   .done-button,
-  .editor-actions button {
+  .editor-actions button,
+  .official-link,
+  .gate-card button,
+  .methods-heading select {
     width: 100%;
   }
 }

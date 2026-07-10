@@ -10,9 +10,22 @@
     />
     <meta name="theme-color" content="#f4dfbf" />
     <link rel="icon" href="/img/favicon.ico" />
-    <link rel="stylesheet" href="/practice/practice.css?v=practice-20260711-1" />
+    <link rel="stylesheet" href="/practice/practice.css?v=practice-20260711-2" />
   </head>
   <body>
+    <section class="password-gate" id="passwordGate" aria-label="刷题页密码">
+      <div class="gate-card">
+        <p class="eyebrow">Private Practice</p>
+        <h1>输入密码</h1>
+        <p>这个刷题页是给自己整理代码和进度用的。请输入访问密码继续。</p>
+        <form id="passwordForm">
+          <input id="passwordInput" type="password" inputmode="numeric" placeholder="输入 111111" autocomplete="current-password" />
+          <button type="submit">进入刷题页</button>
+        </form>
+        <small id="passwordMessage"></small>
+      </div>
+    </section>
+
     <header class="practice-header">
       <a class="brand" href="/" aria-label="回到首页">
         <span class="brand-mark">Xi</span>
@@ -34,7 +47,7 @@
           <p class="eyebrow">C++ Practice</p>
           <h1 id="practice-title">刷题工作台</h1>
           <p class="lead">
-            先做一个安静、顺手的静态练习页：选题、写代码、存草稿、标记完成、看思路。暂时不在线编译，专心把题和代码整理好。
+            先做一个安静、顺手的静态练习页：题集、选题、写代码、存草稿、标记完成、看思路。暂时不在线编译，专心把题和代码整理好。
           </p>
         </div>
         <div class="stats-panel" aria-label="刷题进度">
@@ -48,6 +61,12 @@
 
       <section class="toolbar" aria-label="题目筛选">
         <label>
+          <span>题集</span>
+          <select id="collectionFilter">
+            <option value="all">全部题集</option>
+          </select>
+        </label>
+        <label>
           <span>搜索</span>
           <input id="searchInput" type="search" placeholder="题名、标签或关键词" />
         </label>
@@ -59,6 +78,7 @@
             <option value="简单">简单</option>
             <option value="中等">中等</option>
             <option value="提高">提高</option>
+            <option value="困难">困难</option>
           </select>
         </label>
         <label>
@@ -88,11 +108,14 @@
 
         <article class="problem-detail" aria-live="polite">
           <div class="detail-top">
-            <div>
-              <p class="eyebrow" id="problemMeta">Problem</p>
-              <h2 id="problemTitle">选择一道题开始</h2>
-            </div>
+          <div>
+            <p class="eyebrow" id="problemMeta">Problem</p>
+            <h2 id="problemTitle">选择一道题开始</h2>
+          </div>
+          <div class="detail-actions">
+            <a id="officialLink" class="official-link" href="#" target="_blank" rel="noopener">官方题面</a>
             <button id="doneButton" class="done-button" type="button">标记完成</button>
+          </div>
           </div>
 
           <p id="problemDescription" class="problem-description"></p>
@@ -113,6 +136,12 @@
             <p id="problemHint"></p>
           </details>
 
+          <label class="editor-label" for="summaryEditor">
+            <span>我的题意摘要 / 关键条件</span>
+            <small id="summaryState">自动保存到本机</small>
+          </label>
+          <textarea id="summaryEditor" class="summary-editor" spellcheck="false"></textarea>
+
           <label class="editor-label" for="codeEditor">
             <span>我的 C++ 代码</span>
             <small id="saveState">自动保存到本机</small>
@@ -124,14 +153,19 @@
             <button id="resetButton" type="button">恢复模板</button>
           </div>
 
-          <details class="solution-box">
-            <summary>参考代码</summary>
+          <section class="methods-box" aria-labelledby="methodsTitle">
+            <div class="methods-heading">
+              <h3 id="methodsTitle">思路 / 标准答案预留</h3>
+              <select id="methodSelect" aria-label="选择方法"></select>
+            </div>
+            <p id="methodIdea"></p>
             <pre><code id="solutionCode"></code></pre>
-          </details>
+          </section>
         </article>
       </section>
     </main>
 
-    <script src="/practice/practice.js?v=practice-20260711-1"></script>
+    <script src="/practice/hot100-data.js?v=practice-20260711-2"></script>
+    <script src="/practice/practice.js?v=practice-20260711-2"></script>
   </body>
 </html>
