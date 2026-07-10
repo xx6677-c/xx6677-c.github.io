@@ -34,6 +34,12 @@
   box-sizing: border-box;
 }
 
+#practiceApp[hidden],
+.password-gate[hidden],
+.problem-visual[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -385,6 +391,14 @@ textarea:focus {
   align-items: start;
 }
 
+.workspace > *,
+.practice-hero > *,
+.toolbar > *,
+.io-grid > *,
+.detail-top > * {
+  min-width: 0;
+}
+
 .problem-list {
   position: sticky;
   top: 92px;
@@ -546,6 +560,183 @@ button:hover {
   font-size: 1.04rem;
 }
 
+.problem-visual {
+  margin: 0 0 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 250, 241, 0.9), rgba(185, 215, 223, 0.2), rgba(170, 196, 167, 0.16)),
+    url("/assets/warm-water-garden.jpg") center / cover;
+  box-shadow: var(--soft-shadow);
+}
+
+[data-theme="dark"] .problem-visual {
+  background:
+    linear-gradient(135deg, rgba(21, 15, 12, 0.92), rgba(44, 34, 27, 0.84), rgba(64, 82, 72, 0.18)),
+    url("/assets/warm-water-garden.jpg") center / cover;
+}
+
+#visualCanvas {
+  width: 100%;
+  aspect-ratio: 18 / 7;
+  min-height: 220px;
+  max-height: 360px;
+  padding: 10px;
+}
+
+#visualCanvas svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.problem-visual figcaption {
+  padding: 10px 16px 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.visual-axis,
+.visual-edge {
+  stroke: var(--brown);
+  stroke-width: 3;
+  fill: none;
+}
+
+[data-theme="dark"] .visual-axis,
+[data-theme="dark"] .visual-edge {
+  stroke: #d8bea3;
+}
+
+.visual-arrow-head {
+  fill: var(--brown);
+}
+
+[data-theme="dark"] .visual-arrow-head {
+  fill: #d8bea3;
+}
+
+.visual-bar,
+.visual-node-box,
+.visual-tree-node,
+.visual-cell,
+.visual-phone-key {
+  fill: #d8b48d;
+  stroke: #62412b;
+  stroke-width: 2;
+}
+
+.visual-bar.active,
+.visual-node-box.active,
+.visual-node-box.target,
+.visual-tree-node.active,
+.visual-cell.target,
+.visual-cell.queen,
+.visual-cell.source {
+  fill: #a9c8bd;
+  stroke: #496f68;
+}
+
+.visual-tree-node.invalid,
+.visual-cell.marked,
+.visual-node-box.removed {
+  fill: #cf9279;
+  stroke: #74402f;
+}
+
+.visual-water {
+  fill: rgba(132, 193, 214, 0.58);
+}
+
+.visual-water.container-water {
+  stroke: rgba(73, 122, 139, 0.68);
+  stroke-width: 2;
+}
+
+.visual-rectangle {
+  fill: rgba(148, 196, 179, 0.32);
+  stroke: #56796e;
+  stroke-width: 3;
+  stroke-dasharray: 8 6;
+}
+
+.visual-path,
+.visual-random,
+.visual-guide,
+.visual-remove {
+  fill: none;
+  stroke: #6a9aac;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.visual-random {
+  stroke-dasharray: 7 6;
+}
+
+.visual-guide,
+.visual-remove {
+  stroke: #9e5c45;
+  stroke-width: 3;
+}
+
+.visual-label,
+.visual-cell-text,
+.visual-node-text,
+.visual-order-text,
+.visual-sequence,
+.visual-phone-digit,
+.visual-phone-letters {
+  fill: #3a2618;
+  text-anchor: middle;
+  font-family: "Cascadia Code", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+[data-theme="dark"] .visual-label,
+[data-theme="dark"] .visual-cell-text,
+[data-theme="dark"] .visual-node-text,
+[data-theme="dark"] .visual-order-text,
+[data-theme="dark"] .visual-sequence,
+[data-theme="dark"] .visual-phone-digit,
+[data-theme="dark"] .visual-phone-letters {
+  fill: #f2e5d2;
+}
+
+.visual-phone-digit {
+  font-size: 34px;
+}
+
+.visual-order-badge {
+  fill: #6a9aac;
+  stroke: #fffaf1;
+  stroke-width: 2;
+}
+
+.visual-order-text {
+  fill: #fffaf1;
+  font-size: 11px;
+}
+
+.visual-sequence {
+  font-size: 13px;
+}
+
+.visual-level-guide {
+  stroke: rgba(106, 154, 172, 0.32);
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.visual-phone-letters {
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
 .io-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -660,6 +851,31 @@ summary {
   padding-left: 20px;
 }
 
+.research-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-top: 12px;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 250, 241, 0.62);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+[data-theme="dark"] .research-line {
+  background: rgba(19, 13, 10, 0.54);
+}
+
+.research-line a {
+  color: var(--accent);
+  font-weight: 900;
+}
+
 .interview-box li::marker {
   color: var(--blue);
 }
@@ -717,7 +933,14 @@ textarea {
   .toolbar,
   .workspace,
   .io-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .problem-list,
+  .problem-detail {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .problem-list {

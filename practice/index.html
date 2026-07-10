@@ -10,7 +10,7 @@
     />
     <meta name="theme-color" content="#f4dfbf" />
     <link rel="icon" href="/img/favicon.ico" />
-    <link rel="stylesheet" href="/practice/practice.css?v=practice-20260711-3" />
+    <link rel="stylesheet" href="/practice/practice.css?v=practice-20260711-4" />
   </head>
   <body>
     <section class="password-gate" id="passwordGate" aria-label="刷题页密码">
@@ -19,13 +19,14 @@
         <h1>输入密码</h1>
         <p>这个刷题页是给自己整理代码和进度用的。请输入访问密码继续。</p>
         <form id="passwordForm">
-          <input id="passwordInput" type="password" inputmode="numeric" placeholder="输入 111111" autocomplete="current-password" />
+          <input id="passwordInput" type="password" inputmode="numeric" placeholder="输入 111" autocomplete="current-password" />
           <button type="submit">进入刷题页</button>
         </form>
         <small id="passwordMessage"></small>
       </div>
     </section>
 
+    <div id="practiceApp">
     <header class="practice-header">
       <a class="brand" href="/" aria-label="回到首页">
         <span class="brand-mark">Xi</span>
@@ -120,6 +121,11 @@
 
           <p id="problemDescription" class="problem-description"></p>
 
+          <figure class="problem-visual" id="problemVisual" hidden>
+            <div id="visualCanvas" aria-hidden="true"></div>
+            <figcaption id="visualCaption"></figcaption>
+          </figure>
+
           <div class="io-grid">
             <section>
               <h3>样例输入</h3>
@@ -138,6 +144,10 @@
 
           <details class="interview-box" id="interviewBox" open>
             <summary>面试关注点 / 常见变种</summary>
+            <div class="research-line" id="researchLine" hidden>
+              <span id="researchMeta"></span>
+              <a id="discussionLink" href="#" target="_blank" rel="noopener">查看讨论来源</a>
+            </div>
             <ul id="interviewNotes"></ul>
           </details>
 
@@ -169,8 +179,10 @@
         </article>
       </section>
     </main>
+    </div>
 
-    <script src="/practice/hot100-data.js?v=practice-20260711-3"></script>
-    <script src="/practice/practice.js?v=practice-20260711-3"></script>
+    <script src="/practice/hot100-data.js?v=practice-20260711-4"></script>
+    <script src="/practice/hot100-content.js?v=practice-20260711-4"></script>
+    <script src="/practice/practice.js?v=practice-20260711-4"></script>
   </body>
 </html>
