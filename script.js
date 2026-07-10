@@ -9,7 +9,7 @@ if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 document.querySelector(".theme-toggle").addEventListener("click", () => {
-  const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
-  root.dataset.theme = nextTheme === "dark" ? "dark" : "";
-  localStorage.setItem("theme", nextTheme);
+  const isDark = root.dataset.theme === "dark";
+  root.dataset.theme = isDark ? "" : "dark";
+  localStorage.setItem("theme", isDark ? "light" : "dark");
 });

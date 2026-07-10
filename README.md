@@ -1,11 +1,19 @@
 # xx6677-c.github.io
 
-This repository contains the static GitHub Pages site for `XiXi - BUAAer`.
+Static GitHub Pages site for `XiXi - BUAAer`.
 
-## Files
+The current homepage keeps the old blog identity while using a warm cream visual direction with calm nature imagery and a light technical layer.
 
-- `index.html` - page structure and content
-- `styles.css` - responsive visual design
-- `script.js` - theme toggle and current year
+## Local Source
 
-GitHub Pages can serve this site directly from the repository root.
+The original Hexo source project was found at:
+
+`D:\Blog`
+
+## Image Credits
+
+Downloaded from Unsplash and stored locally under `assets/`.
+
+- `assets/lakeside-greenery.jpg` - Nguyễn Hiệp, green plants beside a calm blue lake
+- `assets/warm-water-garden.jpg` - CHUTTERSNAP, sunlight over water and trees
+- `assets/plant-workspace.jpg` - Mildly Useful, laptop workspace with plant

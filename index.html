@@ -6,119 +6,148 @@
     <title>XiXi - BUAAer</title>
     <meta
       name="description"
-      content="XiXi 的个人 GitHub Pages 主页，收集作品、学习记录和联系方式。"
+      content="XiXi 的个人 GitHub Pages 博客，记录学习、技术、项目和一些温暖的日常。"
     />
     <meta property="og:title" content="XiXi - BUAAer" />
     <meta
       property="og:description"
-      content="一个正在生长的个人主页，用来整理项目、想法和学习轨迹。"
+      content="a BUAAer 的温暖奶油风个人主页，带一点技术感，也留一点治愈的景色。"
     />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#121826" />
+    <meta property="og:image" content="https://xx6677-c.github.io/assets/warm-water-garden.jpg" />
+    <meta name="theme-color" content="#f4dfbf" />
     <link rel="icon" href="/img/favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" aria-label="主导航">
       <a class="brand" href="#top" aria-label="回到首页">
-        <span class="brand-mark">xi</span>
+        <span class="brand-mark">Xi</span>
         <span>XiXi</span>
       </a>
       <nav class="nav-links" aria-label="页面导航">
-        <a href="#work">作品</a>
-        <a href="#notes">记录</a>
+        <a href="#journal">博客</a>
+        <a href="#work">项目</a>
+        <a href="#garden">风景</a>
         <a href="#contact">联系</a>
       </nav>
       <button class="theme-toggle" type="button" aria-label="切换明暗主题">
-        <span class="toggle-icon" aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </header>
 
     <main id="top">
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">GitHub Pages</p>
-          <h1>XiXi</h1>
-          <p class="lead">
-            这里是 xixi 的个人主页。先放下一个清爽的起点，之后可以继续加入项目、文章、简历和任何想展示的东西。
-          </p>
-          <div class="hero-actions" aria-label="主要链接">
-            <a class="button primary" href="https://github.com/xx6677-c">GitHub</a>
-            <a class="button secondary" href="#work">查看作品</a>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-shade"></div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">XiXi's Blog</p>
+            <h1 id="hero-title">a BUAAer</h1>
+            <p class="lead">
+              把学习、代码和生活里的光慢慢收集起来。这里会放项目、笔记、博客，也留给水面、绿植和安静的下午一点位置。
+            </p>
+            <div class="hero-actions" aria-label="主要链接">
+              <a class="button primary" href="/archives/">阅读博客</a>
+              <a class="button secondary" href="https://github.com/xx6677-c">GitHub</a>
+            </div>
           </div>
-        </div>
 
-        <div class="hero-visual" aria-label="个人资料卡">
-          <img src="/img/avatar.jpg" alt="xixi 的头像" />
-          <div class="status-panel">
-            <span class="status-dot" aria-hidden="true"></span>
-            <span>building in public</span>
-          </div>
+          <aside class="tech-panel" aria-label="主页状态">
+            <div class="panel-top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <pre><code>const xixi = {
+  mood: "warm & calm",
+  focus: ["CS", "notes", "projects"],
+  site: "xx6677-c.github.io"
+};</code></pre>
+            <div class="signal-row">
+              <span>online</span>
+              <span>2026</span>
+            </div>
+          </aside>
         </div>
       </section>
 
       <section class="section intro" aria-labelledby="intro-title">
         <div>
           <p class="section-kicker">About</p>
-          <h2 id="intro-title">一个可以慢慢扩展的主页。</h2>
+          <h2 id="intro-title">温暖一点，也清醒一点。</h2>
         </div>
         <p>
-          这个站点目前保留了足够简洁的结构：顶部介绍、作品入口、学习记录和联系方式。以后无论是做作品集、博客还是课程笔记，都可以直接在这里继续加。
+          这个首页保留旧博客的名字和入口，但把第一眼改成更柔和的奶油暖色。绿植、水面和木质光影负责治愈感，细线网格、状态面板和代码片段负责一点点技术感。
         </p>
       </section>
 
-      <section class="section" id="work" aria-labelledby="work-title">
+      <section class="section journal" id="journal" aria-labelledby="journal-title">
         <div class="section-heading">
-          <p class="section-kicker">Work</p>
-          <h2 id="work-title">作品入口</h2>
+          <p class="section-kicker">Journal</p>
+          <h2 id="journal-title">旧博客入口</h2>
         </div>
-        <div class="project-grid">
-          <article class="project-card">
-            <span class="project-number">01</span>
-            <h3>个人主页</h3>
-            <p>当前 GitHub Pages 站点，适合作为作品集、博客和项目索引的起点。</p>
+        <div class="journal-list">
+          <a class="journal-item" href="/2025/03/23/The-first-blog/">
+            <span>2025.03.23</span>
+            <strong>The First Blog</strong>
+            <em>大家好，我是来自 BUAA 的 2023 级计算机系学生。</em>
+          </a>
+          <a class="journal-item" href="/2025/03/23/hello-world/">
+            <span>2025.03.23</span>
+            <strong>Hello World</strong>
+            <em>Hexo 的第一篇文章，也是一切开始的地方。</em>
+          </a>
+        </div>
+      </section>
+
+      <section class="section work" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p class="section-kicker">Workbench</p>
+          <h2 id="work-title">项目与计划</h2>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <span class="work-number">01</span>
+            <h3>GitHub Pages</h3>
+            <p>主页已经放在正确仓库，之后可以继续接回 Hexo 或改成作品集。</p>
             <a href="https://github.com/xx6677-c/xx6677-c.github.io">查看仓库</a>
           </article>
-          <article class="project-card">
-            <span class="project-number">02</span>
+          <article class="work-card">
+            <span class="work-number">02</span>
             <h3>学习记录</h3>
-            <p>可以放课程笔记、编程练习、实验截图和阶段总结，让成长轨迹更容易被看见。</p>
-            <a href="#notes">继续整理</a>
+            <p>可以整理课程笔记、实验过程、算法练习和阶段复盘。</p>
+            <a href="/archives/">文章归档</a>
           </article>
-          <article class="project-card">
-            <span class="project-number">03</span>
+          <article class="work-card">
+            <span class="work-number">03</span>
             <h3>未来作品</h3>
-            <p>给下一个项目预留位置。等有新仓库、新 demo 或新想法时，可以直接替换这里。</p>
+            <p>给后续 demo、课程项目或小工具预留位置。</p>
             <a href="https://github.com/xx6677-c?tab=repositories">更多仓库</a>
           </article>
         </div>
       </section>
 
-      <section class="section notes" id="notes" aria-labelledby="notes-title">
+      <section class="section garden" id="garden" aria-labelledby="garden-title">
         <div class="section-heading">
-          <p class="section-kicker">Notes</p>
-          <h2 id="notes-title">近期计划</h2>
+          <p class="section-kicker">Healing View</p>
+          <h2 id="garden-title">给页面留一点景色。</h2>
         </div>
-        <ol class="timeline">
-          <li>
-            <span>01</span>
-            <p>补充个人介绍：方向、技能、正在学什么。</p>
-          </li>
-          <li>
-            <span>02</span>
-            <p>挑 2-3 个仓库做成作品卡片，配上截图和说明。</p>
-          </li>
-          <li>
-            <span>03</span>
-            <p>如果想写博客，可以新增 posts 页面或接入静态博客生成器。</p>
-          </li>
-        </ol>
+        <div class="photo-strip">
+          <figure>
+            <img src="/assets/lakeside-greenery.jpg" alt="水面旁的绿色植物" />
+            <figcaption>greenery / water</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/plant-workspace.jpg" alt="带绿植的工作桌" />
+            <figcaption>plant / workspace</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section class="section contact" id="contact" aria-labelledby="contact-title">
         <div>
           <p class="section-kicker">Contact</p>
-          <h2 id="contact-title">保持连接</h2>
+          <h2 id="contact-title">继续把这里养起来。</h2>
         </div>
         <div class="contact-actions">
           <a class="button primary" href="https://github.com/xx6677-c">访问 GitHub</a>
@@ -128,7 +157,7 @@
     </main>
 
     <footer class="site-footer">
-      <span>© <span id="year"></span> xixi</span>
+      <span>© <span id="year"></span> xixi · XiXi - BUAAer</span>
       <a href="#top">回到顶部</a>
     </footer>
 
