@@ -463,17 +463,29 @@ const renderProblemList = () => {
   }
 
   for (const problem of filtered) {
+    const category = problem.category || problem.tags?.[0] || "基础练习";
+    const difficultyTone = {
+      入门: "easy",
+      基础: "easy",
+      简单: "easy",
+      中等: "medium",
+      提高: "hard",
+      困难: "hard",
+    }[problem.difficulty] || "neutral";
     const button = document.createElement("button");
     button.type = "button";
     button.className = ["problem-item", problem.id === state.selectedId ? "active" : "", data[problem.id]?.done ? "done" : ""]
       .filter(Boolean)
       .join(" ");
     button.innerHTML = `
-      <strong class="problem-name">${problem.title}</strong>
+      <span class="problem-item-heading">
+        <strong class="problem-name">${problem.title}</strong>
+        <span class="problem-list-category">${category}</span>
+      </span>
       <span class="problem-tags">
-        <span class="chip">${problem.collection || "未分类"}</span>
-        <span class="chip">${problem.difficulty}</span>
-        ${(problem.tags || []).slice(0, 4).map((tag) => `<span class="chip">${tag}</span>`).join("")}
+        <span class="chip chip-collection">${problem.collection || "未分类"}</span>
+        <span class="chip chip-difficulty difficulty-${difficultyTone}">${problem.difficulty}</span>
+        ${(problem.tags || []).slice(0, 4).map((tag, index) => `<span class="chip chip-topic tone-${index % 3}">${tag}</span>`).join("")}
       </span>
     `;
     button.addEventListener("click", () => {
