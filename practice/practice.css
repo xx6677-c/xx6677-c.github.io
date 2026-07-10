@@ -524,31 +524,34 @@ button:hover {
 .problem-list-category {
   display: inline-flex;
   max-width: 48%;
-  min-height: 30px;
+  min-height: 36px;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(74, 47, 30, 0.24);
+  border: 2px solid rgba(106, 154, 172, 0.72);
   border-radius: 6px;
-  padding: 4px 8px;
+  padding: 6px 10px;
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.84), rgba(106, 154, 172, 0.42), rgba(169, 200, 189, 0.46)),
+    linear-gradient(135deg, rgba(255, 252, 246, 0.98), rgba(214, 235, 238, 0.94), rgba(215, 232, 214, 0.92)),
     url("/assets/warm-water-garden.jpg") center / cover;
-  color: var(--brown);
-  font-size: 0.78rem;
+  color: #3d291d;
+  font-size: 0.86rem;
   font-weight: 900;
   line-height: 1.2;
   text-align: center;
   overflow-wrap: anywhere;
-  box-shadow: 0 6px 16px rgba(73, 43, 22, 0.12);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 9px 22px rgba(73, 43, 22, 0.2),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.66);
 }
 
 [data-theme="dark"] .problem-list-category {
-  border-color: rgba(242, 229, 210, 0.18);
+  border-color: rgba(142, 190, 203, 0.78);
   background:
-    linear-gradient(135deg, rgba(19, 13, 10, 0.88), rgba(82, 113, 108, 0.54), rgba(74, 47, 30, 0.76)),
+    linear-gradient(135deg, rgba(255, 249, 239, 0.96), rgba(199, 224, 230, 0.92), rgba(202, 222, 201, 0.9)),
     url("/assets/warm-water-garden.jpg") center / cover;
-  color: #f2e5d2;
+  color: #352319;
 }
 
 .problem-tags {
@@ -559,86 +562,84 @@ button:hover {
 }
 
 .chip {
-  border: 1px solid rgba(74, 47, 30, 0.12);
+  border: 1px solid rgba(255, 248, 237, 0.24);
   border-radius: 999px;
-  padding: 3px 8px;
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 800;
+  padding: 4px 9px;
+  color: #fff8ed;
+  font-size: 0.76rem;
+  font-weight: 900;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 4px 10px rgba(55, 35, 24, 0.14);
 }
 
 .chip-collection {
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.84), rgba(216, 180, 141, 0.42)),
+    linear-gradient(135deg, rgba(72, 43, 27, 0.94), rgba(112, 73, 48, 0.9)),
     url("/assets/cream-living-room.jpg") center / cover;
-  color: #65462f;
 }
 
 .chip-difficulty.difficulty-easy {
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.76), rgba(169, 200, 189, 0.58)),
+    linear-gradient(135deg, rgba(48, 81, 70, 0.94), rgba(79, 116, 101, 0.9)),
     url("/assets/plant-workspace.jpg") center / cover;
-  color: #42635a;
 }
 
 .chip-difficulty.difficulty-medium,
 .chip-topic.tone-0 {
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.76), rgba(166, 207, 220, 0.56)),
+    linear-gradient(135deg, rgba(43, 78, 94, 0.96), rgba(66, 111, 128, 0.9)),
     url("/assets/lakeside-greenery.jpg") center / cover;
-  color: #436675;
 }
 
 .chip-difficulty.difficulty-hard,
 .chip-topic.tone-2 {
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.76), rgba(207, 146, 121, 0.48)),
+    linear-gradient(135deg, rgba(111, 56, 38, 0.96), rgba(151, 79, 55, 0.9)),
     url("/assets/warm-water-garden.jpg") center / cover;
-  color: #744530;
 }
 
 .chip-topic.tone-1 {
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.76), rgba(169, 200, 189, 0.5)),
+    linear-gradient(135deg, rgba(46, 78, 65, 0.96), rgba(76, 116, 94, 0.9)),
     url("/assets/plant-workspace.jpg") center / cover;
-  color: #486258;
 }
 
 .chip-difficulty.difficulty-neutral {
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.8), rgba(216, 180, 141, 0.36)),
+    linear-gradient(135deg, rgba(74, 51, 38, 0.94), rgba(113, 82, 61, 0.9)),
     url("/assets/cream-living-room.jpg") center / cover;
 }
 
 [data-theme="dark"] .chip {
-  border-color: rgba(242, 229, 210, 0.14);
-  color: #e6d5c0;
+  border-color: rgba(255, 248, 237, 0.28);
+  color: #fff8ed;
 }
 
 [data-theme="dark"] .chip-collection {
   background:
-    linear-gradient(135deg, rgba(20, 14, 11, 0.9), rgba(105, 73, 49, 0.64)),
+    linear-gradient(135deg, rgba(48, 29, 19, 0.97), rgba(96, 61, 39, 0.94)),
     url("/assets/cream-living-room.jpg") center / cover;
 }
 
 [data-theme="dark"] .chip-difficulty.difficulty-easy,
 [data-theme="dark"] .chip-topic.tone-1 {
   background:
-    linear-gradient(135deg, rgba(20, 14, 11, 0.9), rgba(75, 106, 96, 0.62)),
+    linear-gradient(135deg, rgba(31, 57, 48, 0.98), rgba(64, 101, 83, 0.94)),
     url("/assets/plant-workspace.jpg") center / cover;
 }
 
 [data-theme="dark"] .chip-difficulty.difficulty-medium,
 [data-theme="dark"] .chip-topic.tone-0 {
   background:
-    linear-gradient(135deg, rgba(20, 14, 11, 0.9), rgba(63, 94, 107, 0.64)),
+    linear-gradient(135deg, rgba(29, 57, 69, 0.98), rgba(53, 93, 109, 0.94)),
     url("/assets/lakeside-greenery.jpg") center / cover;
 }
 
 [data-theme="dark"] .chip-difficulty.difficulty-hard,
 [data-theme="dark"] .chip-topic.tone-2 {
   background:
-    linear-gradient(135deg, rgba(20, 14, 11, 0.9), rgba(116, 69, 48, 0.68)),
+    linear-gradient(135deg, rgba(78, 39, 27, 0.98), rgba(124, 65, 44, 0.94)),
     url("/assets/warm-water-garden.jpg") center / cover;
 }
 
