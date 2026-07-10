@@ -1,32 +1,32 @@
 :root {
   color-scheme: light;
-  --cream: #fff6e8;
-  --cream-deep: #f4dfbf;
-  --milk: #fffaf1;
-  --paper: #fffdf7;
-  --ink: #27302b;
-  --muted: #766f62;
-  --line: rgba(82, 93, 72, 0.18);
-  --sage: #6f8c67;
-  --teal: #247777;
-  --coral: #d97856;
-  --amber: #c9943c;
+  --cream: #f4ead8;
+  --cream-deep: #dfc8aa;
+  --milk: #fbf4e8;
+  --paper: #fffaf1;
+  --ink: #352d24;
+  --muted: #7b6d5c;
+  --line: rgba(126, 103, 76, 0.2);
+  --sage: #9b967c;
+  --teal: #8a6745;
+  --coral: #c07a54;
+  --amber: #b88843;
   --shadow: 0 28px 80px rgba(91, 67, 42, 0.18);
   --soft-shadow: 0 16px 44px rgba(91, 67, 42, 0.12);
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
-  --cream: #171b18;
-  --cream-deep: #2a241d;
-  --milk: #20251f;
-  --paper: #242a24;
+  --cream: #1d1914;
+  --cream-deep: #2d241c;
+  --milk: #241f19;
+  --paper: #2b251d;
   --ink: #f7eddc;
   --muted: #c8bba3;
   --line: rgba(239, 217, 180, 0.18);
-  --sage: #a2c28e;
-  --teal: #74c7bd;
-  --coral: #f0a080;
+  --sage: #beb69a;
+  --teal: #d4ad7d;
+  --coral: #e6a17b;
   --amber: #e8c26a;
   --shadow: 0 30px 90px rgba(0, 0, 0, 0.36);
   --soft-shadow: 0 16px 48px rgba(0, 0, 0, 0.24);
@@ -44,8 +44,8 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at 18% 10%, rgba(217, 120, 86, 0.18), transparent 28rem),
-    radial-gradient(circle at 82% 16%, rgba(111, 140, 103, 0.2), transparent 30rem),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.42), transparent 32rem),
+    linear-gradient(250deg, rgba(223, 200, 170, 0.34), transparent 34rem),
     linear-gradient(180deg, var(--cream), var(--milk));
   color: var(--ink);
   font-family:
@@ -60,8 +60,8 @@ body::before {
   z-index: -1;
   content: "";
   background-image:
-    linear-gradient(rgba(36, 119, 119, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36, 119, 119, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(138, 103, 69, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138, 103, 69, 0.045) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: linear-gradient(to bottom, black, transparent 72%);
   pointer-events: none;
@@ -110,9 +110,9 @@ img {
   width: 36px;
   height: 36px;
   place-items: center;
-  border: 1px solid rgba(36, 119, 119, 0.28);
+  border: 1px solid rgba(138, 103, 69, 0.28);
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--teal), var(--sage));
+  background: linear-gradient(135deg, #b88862, #7f6f56);
   color: #fffaf1;
   font-size: 0.78rem;
   box-shadow: var(--soft-shadow);
@@ -165,8 +165,41 @@ img {
   min-height: calc(100vh - 72px);
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(39, 48, 43, 0.74), rgba(39, 48, 43, 0.2) 54%, rgba(39, 48, 43, 0.42)),
+    linear-gradient(110deg, rgba(255, 250, 241, 0.96), rgba(244, 234, 216, 0.88) 48%, rgba(223, 200, 170, 0.72)),
+    linear-gradient(180deg, #fff8ec, #ead5b7);
+}
+
+.hero::before {
+  position: absolute;
+  inset: clamp(46px, 8vw, 92px) clamp(18px, 6vw, 88px) auto auto;
+  width: min(34vw, 420px);
+  aspect-ratio: 1.02;
+  content: "";
+  border: 1px solid rgba(126, 103, 76, 0.18);
+  border-radius: 42% 42% 8px 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 250, 241, 0.2)),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.64), rgba(223, 200, 170, 0.34));
+  box-shadow:
+    inset 0 0 0 18px rgba(255, 250, 241, 0.38),
+    var(--shadow);
+}
+
+.hero::after {
+  position: absolute;
+  right: clamp(18px, 7vw, 118px);
+  bottom: clamp(54px, 9vw, 110px);
+  width: min(28vw, 330px);
+  aspect-ratio: 1.4;
+  content: "";
+  border: 1px solid rgba(126, 103, 76, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 250, 241, 0.28), rgba(78, 53, 32, 0.2)),
     url("/assets/warm-water-garden.jpg") center / cover;
+  box-shadow: var(--soft-shadow);
+  filter: saturate(0.62) sepia(0.16) brightness(1.06);
+  opacity: 0.72;
 }
 
 .hero-shade {
@@ -178,6 +211,7 @@ img {
 
 .hero-grid {
   position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 430px);
   align-items: center;
@@ -187,8 +221,9 @@ img {
 }
 
 .hero-copy {
-  color: #fffaf1;
-  text-shadow: 0 12px 34px rgba(33, 24, 17, 0.35);
+  max-width: 760px;
+  color: var(--ink);
+  text-shadow: none;
 }
 
 .eyebrow,
@@ -202,7 +237,7 @@ img {
 }
 
 .hero .eyebrow {
-  color: #ffe0b8;
+  color: var(--coral);
 }
 
 h1,
@@ -223,7 +258,7 @@ h1 {
 .lead {
   max-width: 680px;
   margin-bottom: 34px;
-  color: rgba(255, 250, 241, 0.88);
+  color: var(--muted);
   font-size: clamp(1.05rem, 2vw, 1.34rem);
 }
 
@@ -261,7 +296,7 @@ h1 {
 }
 
 .hero .button.secondary {
-  color: #fffaf1;
+  color: var(--ink);
   backdrop-filter: blur(12px);
 }
 
@@ -271,10 +306,10 @@ h1 {
 
 .tech-panel {
   overflow: hidden;
-  border: 1px solid rgba(255, 250, 241, 0.32);
+  border: 1px solid rgba(126, 103, 76, 0.18);
   border-radius: 8px;
-  background: rgba(255, 250, 241, 0.18);
-  color: #fffaf1;
+  background: rgba(255, 250, 241, 0.66);
+  color: var(--ink);
   box-shadow: var(--shadow);
   backdrop-filter: blur(22px);
 }
@@ -282,7 +317,7 @@ h1 {
 .panel-top {
   display: flex;
   gap: 8px;
-  border-bottom: 1px solid rgba(255, 250, 241, 0.22);
+  border-bottom: 1px solid rgba(126, 103, 76, 0.16);
   padding: 14px 16px;
 }
 
@@ -317,9 +352,9 @@ code {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  border-top: 1px solid rgba(255, 250, 241, 0.22);
+  border-top: 1px solid rgba(126, 103, 76, 0.16);
   padding: 13px 16px;
-  color: rgba(255, 250, 241, 0.78);
+  color: var(--muted);
   font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -393,7 +428,7 @@ h2 {
 
 .work {
   background:
-    linear-gradient(130deg, color-mix(in srgb, var(--sage), transparent 84%), transparent 42%),
+    linear-gradient(130deg, rgba(255, 250, 241, 0.64), transparent 42%),
     var(--milk);
 }
 
