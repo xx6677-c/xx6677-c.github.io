@@ -1,11 +1,11 @@
 :root {
   color-scheme: light;
-  --cream: #f4ead8;
-  --milk: #fbf4e8;
-  --paper: rgba(255, 250, 241, 0.9);
-  --ink: #3a2618;
-  --muted: #826f5d;
-  --line: rgba(89, 54, 31, 0.2);
+  --cream: #eedcc3;
+  --milk: #f5e6d0;
+  --paper: rgba(248, 234, 214, 0.94);
+  --ink: #332015;
+  --muted: #67503d;
+  --line: rgba(89, 54, 31, 0.24);
   --brown: #4a2f1e;
   --accent: #c07a54;
   --blue: rgba(185, 215, 223, 0.3);
@@ -48,7 +48,7 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    linear-gradient(120deg, rgba(255, 250, 241, 0.9), rgba(255, 250, 241, 0.6)),
+    linear-gradient(120deg, rgba(246, 229, 205, 0.9), rgba(232, 207, 175, 0.7)),
     url("/assets/cream-living-room.jpg") center top / cover fixed;
   color: var(--ink);
   font-family:
@@ -83,7 +83,7 @@ textarea {
   place-items: center;
   padding: 20px;
   background:
-    linear-gradient(120deg, rgba(255, 250, 241, 0.9), rgba(185, 215, 223, 0.22), rgba(170, 196, 167, 0.18)),
+    linear-gradient(120deg, rgba(246, 229, 205, 0.9), rgba(185, 215, 223, 0.2), rgba(216, 193, 160, 0.48)),
     url("/assets/cream-living-room.jpg") center / cover;
 }
 
@@ -103,7 +103,7 @@ textarea {
   border-radius: 8px;
   padding: clamp(24px, 5vw, 42px);
   background:
-    linear-gradient(135deg, var(--paper), rgba(255, 250, 241, 0.7)),
+    linear-gradient(135deg, var(--paper), rgba(239, 216, 187, 0.82)),
     url("/assets/cream-living-room.jpg") center / cover;
   box-shadow: var(--shadow);
 }
@@ -155,7 +155,7 @@ textarea {
   padding: 14px clamp(18px, 5vw, 72px);
   border-bottom: 1px solid var(--line);
   background:
-    linear-gradient(90deg, rgba(255, 250, 241, 0.92), rgba(246, 231, 207, 0.86)),
+    linear-gradient(90deg, rgba(248, 235, 216, 0.95), rgba(231, 207, 175, 0.9)),
     url("/assets/cream-living-room.jpg") center 18% / cover;
   backdrop-filter: blur(18px);
 }
@@ -239,7 +239,7 @@ textarea {
   border-radius: 8px;
   padding: clamp(28px, 5vw, 54px);
   background:
-    linear-gradient(105deg, rgba(255, 250, 241, 0.92), rgba(185, 215, 223, 0.24) 48%, rgba(170, 196, 167, 0.2)),
+    linear-gradient(105deg, rgba(248, 233, 212, 0.95), rgba(200, 221, 223, 0.46) 52%, rgba(207, 216, 190, 0.4)),
     url("/assets/cream-living-room.jpg") center / cover;
   box-shadow: var(--shadow);
 }
@@ -287,7 +287,7 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, var(--paper), rgba(255, 250, 241, 0.68)),
+    linear-gradient(135deg, var(--paper), rgba(237, 216, 188, 0.84)),
     url("/assets/cream-living-room.jpg") center / cover;
   box-shadow: var(--soft-shadow);
 }
@@ -350,7 +350,7 @@ h1 {
   display: grid;
   gap: 8px;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.94rem;
   font-weight: 900;
 }
 
@@ -360,7 +360,7 @@ textarea {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 250, 241, 0.78);
+  background: rgba(250, 238, 220, 0.94);
   color: var(--ink);
   outline: none;
 }
@@ -373,8 +373,10 @@ textarea {
 
 input,
 select {
-  min-height: 44px;
-  padding: 0 12px;
+  min-height: 48px;
+  padding: 0 13px;
+  font-size: 1rem;
+  font-weight: 750;
 }
 
 input:focus,
@@ -432,7 +434,7 @@ textarea:focus {
   border-radius: 8px;
   padding: 0 14px;
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.9), rgba(185, 215, 223, 0.22)),
+    linear-gradient(135deg, rgba(248, 235, 216, 0.94), rgba(195, 220, 224, 0.42)),
     url("/assets/lakeside-greenery.jpg") center / cover;
   color: var(--ink);
   font-weight: 900;
@@ -447,7 +449,7 @@ textarea:focus {
 .list-heading {
   margin-bottom: 12px;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -480,7 +482,7 @@ button:hover {
   padding: 14px;
   text-align: left;
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.9), rgba(255, 250, 241, 0.66)),
+    linear-gradient(135deg, rgba(249, 237, 219, 0.96), rgba(234, 213, 185, 0.88)),
     url("/assets/plant-workspace.jpg") center / cover;
   color: var(--ink);
 }
@@ -516,8 +518,8 @@ button:hover {
   min-width: 0;
   margin: 0;
   flex: 1;
-  font-size: 1rem;
-  line-height: 1.35;
+  font-size: 1.1rem;
+  line-height: 1.4;
   overflow-wrap: anywhere;
 }
 
@@ -708,7 +710,8 @@ button:hover {
 .problem-description {
   margin: 22px 0;
   color: var(--muted);
-  font-size: 1.04rem;
+  font-size: 1.07rem;
+  font-weight: 520;
 }
 
 .problem-visual {
@@ -717,7 +720,7 @@ button:hover {
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.9), rgba(185, 215, 223, 0.2), rgba(170, 196, 167, 0.16)),
+    linear-gradient(135deg, rgba(248, 235, 216, 0.94), rgba(195, 219, 223, 0.38), rgba(200, 214, 190, 0.32)),
     url("/assets/warm-water-garden.jpg") center / cover;
   box-shadow: var(--soft-shadow);
 }
@@ -902,7 +905,7 @@ button:hover {
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.82), rgba(185, 215, 223, 0.16)),
+    linear-gradient(135deg, rgba(249, 237, 220, 0.94), rgba(213, 222, 210, 0.72)),
     url("/assets/cream-living-room.jpg") center / cover;
 }
 
@@ -943,7 +946,7 @@ pre {
 
 .interview-box {
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.86), rgba(185, 215, 223, 0.2), rgba(170, 196, 167, 0.12)),
+    linear-gradient(135deg, rgba(249, 236, 217, 0.95), rgba(194, 219, 223, 0.42), rgba(201, 215, 191, 0.34)),
     url("/assets/warm-water-garden.jpg") center / cover;
 }
 
@@ -955,7 +958,7 @@ pre {
 
 .methods-box {
   background:
-    linear-gradient(135deg, rgba(255, 250, 241, 0.84), rgba(170, 196, 167, 0.16)),
+    linear-gradient(135deg, rgba(248, 234, 214, 0.95), rgba(199, 214, 190, 0.42)),
     url("/assets/plant-workspace.jpg") center / cover;
 }
 
@@ -1012,7 +1015,7 @@ summary {
   padding: 9px 11px;
   border: 1px solid var(--line);
   border-radius: 6px;
-  background: rgba(255, 250, 241, 0.62);
+  background: rgba(248, 235, 216, 0.9);
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 750;
