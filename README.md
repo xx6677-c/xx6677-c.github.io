@@ -1,6 +1,6 @@
 # xx6677-c.github.io
 
-This repository contains the static GitHub Pages site for `xixi567`.
+This repository contains the static GitHub Pages site for `XiXi - BUAAer`.
 
 ## Files
 
