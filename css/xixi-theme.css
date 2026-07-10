@@ -1,0 +1,294 @@
+:root {
+  --xixi-cream: #f4ead8;
+  --xixi-milk: #fbf4e8;
+  --xixi-paper: rgba(255, 250, 241, 0.9);
+  --xixi-ink: #3a2618;
+  --xixi-muted: #806c59;
+  --xixi-brown: #4a2f1e;
+  --xixi-line: rgba(89, 54, 31, 0.18);
+  --xixi-blue: rgba(185, 215, 223, 0.26);
+  --xixi-green: rgba(170, 196, 167, 0.22);
+  --xixi-shadow: 0 22px 64px rgba(73, 43, 22, 0.16);
+}
+
+[data-theme="dark"] {
+  --xixi-cream: #17120f;
+  --xixi-milk: #201711;
+  --xixi-paper: rgba(42, 32, 25, 0.88);
+  --xixi-ink: #f2e5d2;
+  --xixi-muted: #c7ad93;
+  --xixi-brown: #120d0a;
+  --xixi-line: rgba(240, 222, 196, 0.16);
+  --xixi-blue: rgba(142, 180, 189, 0.16);
+  --xixi-green: rgba(147, 170, 143, 0.14);
+  --xixi-shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+}
+
+html {
+  background: var(--xixi-cream);
+}
+
+body {
+  color: var(--xixi-ink);
+  background:
+    linear-gradient(120deg, rgba(255, 250, 241, 0.92), rgba(255, 250, 241, 0.62)),
+    url("/assets/cream-living-room.jpg") center top / cover fixed !important;
+}
+
+[data-theme="dark"] body {
+  background:
+    linear-gradient(120deg, rgba(18, 13, 10, 0.92), rgba(32, 23, 17, 0.82)),
+    url("/assets/cream-living-room.jpg") center top / cover fixed !important;
+}
+
+#web_bg,
+#web_bg:before {
+  background:
+    linear-gradient(130deg, rgba(255, 250, 241, 0.58), var(--xixi-blue) 48%, var(--xixi-green)),
+    url("/assets/cream-living-room.jpg") center / cover fixed !important;
+}
+
+[data-theme="dark"] #web_bg,
+[data-theme="dark"] #web_bg:before {
+  background:
+    linear-gradient(130deg, rgba(18, 13, 10, 0.82), var(--xixi-blue) 48%, var(--xixi-green)),
+    url("/assets/cream-living-room.jpg") center / cover fixed !important;
+}
+
+#page-header {
+  background:
+    linear-gradient(105deg, rgba(255, 250, 241, 0.84), rgba(255, 250, 241, 0.58) 46%, rgba(185, 215, 223, 0.22)),
+    url("/assets/cream-living-room.jpg") center / cover !important;
+}
+
+#page-header.post-bg {
+  background:
+    linear-gradient(105deg, rgba(255, 250, 241, 0.72), rgba(74, 47, 30, 0.2)),
+    var(--xixi-post-cover, url("/assets/cream-living-room.jpg")) center / cover !important;
+}
+
+[data-theme="dark"] #page-header {
+  background:
+    linear-gradient(105deg, rgba(18, 13, 10, 0.84), rgba(32, 23, 17, 0.74) 46%, rgba(142, 180, 189, 0.16)),
+    url("/assets/cream-living-room.jpg") center / cover !important;
+}
+
+[data-theme="dark"] #page-header.post-bg {
+  background:
+    linear-gradient(105deg, rgba(18, 13, 10, 0.76), rgba(32, 23, 17, 0.48)),
+    var(--xixi-post-cover, url("/assets/cream-living-room.jpg")) center / cover !important;
+}
+
+#nav,
+#page-header.nav-fixed > #nav {
+  background:
+    linear-gradient(90deg, rgba(255, 250, 241, 0.92), rgba(246, 231, 207, 0.86)),
+    url("/assets/cream-living-room.jpg") center 18% / cover !important;
+  box-shadow: 0 10px 32px rgba(73, 43, 22, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+[data-theme="dark"] #nav,
+[data-theme="dark"] #page-header.nav-fixed > #nav {
+  background:
+    linear-gradient(90deg, rgba(18, 13, 10, 0.92), rgba(42, 32, 25, 0.86)),
+    url("/assets/cream-living-room.jpg") center 18% / cover !important;
+}
+
+#nav a,
+#nav .site-name,
+#site-title,
+#site-subtitle,
+#post-info .post-title,
+#post-info #post-meta {
+  color: var(--xixi-ink) !important;
+  text-shadow: none !important;
+}
+
+[data-theme="dark"] #nav a,
+[data-theme="dark"] #nav .site-name,
+[data-theme="dark"] #site-title,
+[data-theme="dark"] #site-subtitle,
+[data-theme="dark"] #post-info .post-title,
+[data-theme="dark"] #post-info #post-meta {
+  color: #f2e5d2 !important;
+}
+
+#site-title,
+#post-info .post-title,
+.article-title,
+.post-title,
+#page h1,
+#archive .article-sort-title {
+  color: var(--xixi-ink) !important;
+  letter-spacing: 0 !important;
+}
+
+#content-inner,
+#recent-posts,
+#archive,
+#category,
+#tag,
+#page,
+#post {
+  color: var(--xixi-ink);
+}
+
+#recent-posts > .recent-post-item,
+#post,
+#page,
+#archive,
+#tag,
+#category,
+#aside-content .card-widget,
+.post-copyright,
+.pagination-post,
+.article-sort-item,
+.pagination,
+.category-lists,
+.tag-cloud-list {
+  border: 1px solid var(--xixi-line) !important;
+  border-radius: 8px !important;
+  background:
+    linear-gradient(135deg, var(--xixi-paper), rgba(255, 250, 241, 0.66)),
+    url("/assets/cream-living-room.jpg") center / cover !important;
+  box-shadow: var(--xixi-shadow) !important;
+}
+
+[data-theme="dark"] #recent-posts > .recent-post-item,
+[data-theme="dark"] #post,
+[data-theme="dark"] #page,
+[data-theme="dark"] #archive,
+[data-theme="dark"] #tag,
+[data-theme="dark"] #category,
+[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] .post-copyright,
+[data-theme="dark"] .pagination-post,
+[data-theme="dark"] .article-sort-item,
+[data-theme="dark"] .pagination,
+[data-theme="dark"] .category-lists,
+[data-theme="dark"] .tag-cloud-list {
+  background:
+    linear-gradient(135deg, rgba(42, 32, 25, 0.92), rgba(32, 23, 17, 0.76)),
+    url("/assets/cream-living-room.jpg") center / cover !important;
+}
+
+#aside-content .card-info {
+  background:
+    linear-gradient(150deg, rgba(255, 250, 241, 0.9), rgba(185, 215, 223, 0.22)),
+    url("/assets/plant-workspace.jpg") center / cover !important;
+}
+
+[data-theme="dark"] #aside-content .card-info {
+  background:
+    linear-gradient(150deg, rgba(42, 32, 25, 0.9), rgba(142, 180, 189, 0.16)),
+    url("/assets/plant-workspace.jpg") center / cover !important;
+}
+
+.avatar-img img {
+  border: 4px solid rgba(255, 250, 241, 0.72) !important;
+  box-shadow: 0 12px 34px rgba(73, 43, 22, 0.18);
+}
+
+a,
+.article-title,
+.post-meta a,
+.post-copyright a,
+.toc-link.active,
+#aside-content a:hover {
+  color: #6d442a !important;
+}
+
+[data-theme="dark"] a,
+[data-theme="dark"] .article-title,
+[data-theme="dark"] .post-meta a,
+[data-theme="dark"] .post-copyright a,
+[data-theme="dark"] .toc-link.active,
+[data-theme="dark"] #aside-content a:hover {
+  color: #d2aa7d !important;
+}
+
+.recent-post-info,
+.article-meta-wrap,
+.content,
+.post-content,
+.post-copyright,
+#aside-content,
+.webinfo,
+.announcement_content,
+.toc-content,
+.article-sort-item-info {
+  color: var(--xixi-muted) !important;
+}
+
+#article-container {
+  color: var(--xixi-ink);
+}
+
+#article-container code {
+  border: 1px solid rgba(74, 47, 30, 0.16);
+  border-radius: 6px;
+  background: rgba(185, 215, 223, 0.2) !important;
+  color: #5b3a24 !important;
+}
+
+[data-theme="dark"] #article-container code {
+  border-color: rgba(240, 222, 196, 0.16);
+  background: rgba(142, 180, 189, 0.14) !important;
+  color: #f2d2ad !important;
+}
+
+#card-info-btn,
+.post-meta__tags,
+#pagination .page-number.current,
+#rightside > div > button {
+  border: 1px solid rgba(74, 47, 30, 0.18) !important;
+  border-radius: 8px !important;
+  background:
+    linear-gradient(135deg, rgba(74, 47, 30, 0.94), rgba(109, 68, 42, 0.9)),
+    url("/assets/cream-living-room.jpg") center / cover !important;
+  color: #fffaf1 !important;
+}
+
+[data-theme="dark"] #card-info-btn,
+[data-theme="dark"] .post-meta__tags,
+[data-theme="dark"] #pagination .page-number.current,
+[data-theme="dark"] #rightside > div > button {
+  background:
+    linear-gradient(135deg, rgba(242, 229, 210, 0.18), rgba(210, 170, 125, 0.18)),
+    url("/assets/cream-living-room.jpg") center / cover !important;
+  color: #f2e5d2 !important;
+}
+
+.post_cover img,
+.aside-list .thumbnail img,
+.pagination-related .cover,
+.post-bg {
+  filter: saturate(0.78) sepia(0.1) brightness(1.04);
+}
+
+[data-theme="dark"] .post_cover img,
+[data-theme="dark"] .aside-list .thumbnail img,
+[data-theme="dark"] .pagination-related .cover,
+[data-theme="dark"] .post-bg {
+  filter: saturate(0.48) sepia(0.12) brightness(0.68);
+}
+
+#footer {
+  background:
+    linear-gradient(90deg, rgba(255, 250, 241, 0.88), rgba(246, 231, 207, 0.82)),
+    url("/assets/cream-living-room.jpg") center 80% / cover !important;
+  color: var(--xixi-muted) !important;
+}
+
+[data-theme="dark"] #footer {
+  background:
+    linear-gradient(90deg, rgba(18, 13, 10, 0.92), rgba(42, 32, 25, 0.82)),
+    url("/assets/cream-living-room.jpg") center 80% / cover !important;
+}
+
+@media (max-width: 768px) {
+  #page-header {
+    background-position: center !important;
+  }
+}
