@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>C++ 刷题 | XiXi - BUAAer</title>
+    <meta
+      name="description"
+      content="XiXi 的 C++ 代码题练习页，支持题目筛选、代码草稿、本地进度和题解折叠。"
+    />
+    <meta name="theme-color" content="#f4dfbf" />
+    <link rel="icon" href="/img/favicon.ico" />
+    <link rel="stylesheet" href="/practice/practice.css?v=practice-20260711-1" />
+  </head>
+  <body>
+    <header class="practice-header">
+      <a class="brand" href="/" aria-label="回到首页">
+        <span class="brand-mark">Xi</span>
+        <span>XiXi</span>
+      </a>
+      <nav class="nav-links" aria-label="页面导航">
+        <a href="/">首页</a>
+        <a href="/archives/">博客</a>
+        <a href="/practice/">刷题</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="切换日间和夜间模式">
+        <span aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <main class="practice-shell">
+      <section class="practice-hero" aria-labelledby="practice-title">
+        <div>
+          <p class="eyebrow">C++ Practice</p>
+          <h1 id="practice-title">刷题工作台</h1>
+          <p class="lead">
+            先做一个安静、顺手的静态练习页：选题、写代码、存草稿、标记完成、看思路。暂时不在线编译，专心把题和代码整理好。
+          </p>
+        </div>
+        <div class="stats-panel" aria-label="刷题进度">
+          <span class="stats-label">progress</span>
+          <strong id="progressText">0 / 0</strong>
+          <div class="progress-track" aria-hidden="true">
+            <span id="progressBar"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="题目筛选">
+        <label>
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="题名、标签或关键词" />
+        </label>
+        <label>
+          <span>难度</span>
+          <select id="difficultyFilter">
+            <option value="all">全部难度</option>
+            <option value="入门">入门</option>
+            <option value="简单">简单</option>
+            <option value="中等">中等</option>
+            <option value="提高">提高</option>
+          </select>
+        </label>
+        <label>
+          <span>标签</span>
+          <select id="tagFilter">
+            <option value="all">全部标签</option>
+          </select>
+        </label>
+        <label>
+          <span>状态</span>
+          <select id="statusFilter">
+            <option value="all">全部状态</option>
+            <option value="todo">未完成</option>
+            <option value="done">已完成</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="workspace" aria-label="刷题区域">
+        <aside class="problem-list" aria-label="题目列表">
+          <div class="list-heading">
+            <span>Problems</span>
+            <button id="clearFilters" type="button">清空筛选</button>
+          </div>
+          <div id="problemList"></div>
+        </aside>
+
+        <article class="problem-detail" aria-live="polite">
+          <div class="detail-top">
+            <div>
+              <p class="eyebrow" id="problemMeta">Problem</p>
+              <h2 id="problemTitle">选择一道题开始</h2>
+            </div>
+            <button id="doneButton" class="done-button" type="button">标记完成</button>
+          </div>
+
+          <p id="problemDescription" class="problem-description"></p>
+
+          <div class="io-grid">
+            <section>
+              <h3>样例输入</h3>
+              <pre id="sampleInput"></pre>
+            </section>
+            <section>
+              <h3>样例输出</h3>
+              <pre id="sampleOutput"></pre>
+            </section>
+          </div>
+
+          <details class="hint-box">
+            <summary>思路提示</summary>
+            <p id="problemHint"></p>
+          </details>
+
+          <label class="editor-label" for="codeEditor">
+            <span>我的 C++ 代码</span>
+            <small id="saveState">自动保存到本机</small>
+          </label>
+          <textarea id="codeEditor" spellcheck="false"></textarea>
+
+          <div class="editor-actions">
+            <button id="copyButton" type="button">复制代码</button>
+            <button id="resetButton" type="button">恢复模板</button>
+          </div>
+
+          <details class="solution-box">
+            <summary>参考代码</summary>
+            <pre><code id="solutionCode"></code></pre>
+          </details>
+        </article>
+      </section>
+    </main>
+
+    <script src="/practice/practice.js?v=practice-20260711-1"></script>
+  </body>
+</html>
