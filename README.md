@@ -17,3 +17,4 @@ Downloaded from Unsplash and stored locally under `assets/`.
 - `assets/lakeside-greenery.jpg` - Nguyễn Hiệp, green plants beside a calm blue lake
 - `assets/warm-water-garden.jpg` - CHUTTERSNAP, sunlight over water and trees
 - `assets/plant-workspace.jpg` - Mildly Useful, laptop workspace with plant
+- `assets/cream-living-room.jpg` - Costa Live, modern living room with beige chairs and coffee table
