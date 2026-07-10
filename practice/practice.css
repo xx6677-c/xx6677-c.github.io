@@ -554,6 +554,7 @@ button:hover {
 
 .io-grid section,
 .hint-box,
+.interview-box,
 .solution-box,
 .methods-box {
   border: 1px solid var(--line);
@@ -565,6 +566,7 @@ button:hover {
 
 [data-theme="dark"] .io-grid section,
 [data-theme="dark"] .hint-box,
+[data-theme="dark"] .interview-box,
 [data-theme="dark"] .solution-box,
 [data-theme="dark"] .methods-box {
   background:
@@ -590,10 +592,23 @@ pre {
 }
 
 .hint-box,
+.interview-box,
 .solution-box,
 .methods-box {
   margin-top: 14px;
   padding: 14px;
+}
+
+.interview-box {
+  background:
+    linear-gradient(135deg, rgba(255, 250, 241, 0.86), rgba(185, 215, 223, 0.2), rgba(170, 196, 167, 0.12)),
+    url("/assets/warm-water-garden.jpg") center / cover;
+}
+
+[data-theme="dark"] .interview-box {
+  background:
+    linear-gradient(135deg, rgba(25, 18, 14, 0.86), rgba(59, 44, 32, 0.72), rgba(107, 132, 111, 0.14)),
+    url("/assets/warm-water-garden.jpg") center / cover;
 }
 
 .methods-box {
@@ -633,9 +648,20 @@ summary {
   font-weight: 900;
 }
 
-.hint-box p {
+.hint-box p,
+.interview-box ul {
   margin: 12px 0 0;
   color: var(--muted);
+}
+
+.interview-box ul {
+  display: grid;
+  gap: 8px;
+  padding-left: 20px;
+}
+
+.interview-box li::marker {
+  color: var(--blue);
 }
 
 .editor-label {
