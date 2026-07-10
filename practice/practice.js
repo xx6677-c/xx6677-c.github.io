@@ -746,6 +746,7 @@ const renderDetail = () => {
   const saved = data[problem.id] || {};
   $("#problemMeta").textContent = `${problem.collection || "未分类"} · ${problem.difficulty} · ${(problem.tags || []).join(" / ")}`;
   $("#problemTitle").textContent = problem.title;
+  $("#problemCategory").textContent = problem.category || problem.tags?.[0] || "基础练习";
   $("#problemDescription").textContent = problem.description;
   $("#sampleInput").textContent = problem.input || "见题面";
   $("#sampleOutput").textContent = problem.output || "见题面";
